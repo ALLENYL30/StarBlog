@@ -6,12 +6,12 @@
     <div class="post-meta">
         <div class="d-flex justify-content-between">
             <div>
-                发布：
+                Published:
                 <span>@Model.CreationTime.ToShortDateString()</span>
                 <span>@Model.CreationTime.ToString("hh:mm")</span>
             </div>
             <div>
-                更新：
+                Updated:
                 @Model.LastUpdateTime.ToShortDateString()
                 @Model.LastUpdateTime.ToString("hh:mm")
             </div>
@@ -20,7 +20,7 @@
         <div class="d-flex justify-content-between">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">博客</li>
+                    <li class="breadcrumb-item active">Blog</li>
                     @foreach (var category in Model.Categories) {
                         <li class="breadcrumb-item">
                             <a asp-controller="Blog" asp-action="List"
@@ -31,7 +31,7 @@
                     }
                 </ol>
             </nav>
-            <div>字数：@Model.Content.Length.ToString()</div>
+            <div>Word count: @Model.Content.Length.ToString()</div>
         </div>
     </div>
 </header>

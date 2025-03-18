@@ -1,6 +1,6 @@
 ﻿@model Photo
 @{
-    ViewBag.Title = "查看图片详情";
+    ViewBag.Title = "Photo Details";
     var pjpeg = false;
 
     var imageUrl = "/media/photography/" + Model?.FilePath.Replace("\\", "/");
@@ -25,8 +25,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@Model?.Title</h5>
-                    <div class="card-text">拍摄地点：@Model?.Location</div>
-                    <div class="card-text">时间：@Model?.CreateTime</div>
+                    <div class="card-text">Location: @Model?.Location</div>
+                    <div class="card-text">Date: @Model?.CreateTime</div>
                 </div>
             </div>
             <div class="card mt-3">
@@ -34,13 +34,13 @@
                     <div class="d-grid gap-2">
                         <a class="btn btn-outline-info" role="button"
                            asp-action="Previous" asp-route-id="@Model?.Id">
-                            上一张
+                            Previous
                         </a>
                         <a class="btn btn-outline-info" role="button"
                            asp-action="Next" asp-route-id="@Model?.Id">
-                            下一张
+                            Next
                         </a>
-                        <a class="btn btn-outline-secondary" role="button" asp-action="RandomPhoto">随机推荐</a>
+                        <a class="btn btn-outline-secondary" role="button" asp-action="RandomPhoto">Random Photo</a>
                     </div>
                 </div>
             </div>

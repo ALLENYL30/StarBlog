@@ -23,14 +23,14 @@
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold lh-1 mb-3">DealiAxy's Blog</h1>
             <div class="lead">
-                <p>一句诗：{{poemSimple}}</p>
-                <p>一言：{{hitokoto}}</p>
+                @* <p>一句诗：{{poemSimple}}</p> *@
+                @* <p>一言：{{hitokoto}}</p> *@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <a class="btn btn-primary btn-lg px-4" asp-controller="Blog" asp-action="RandomPost">看文</a>
-                <a class="btn btn-outline-secondary btn-lg px-4" asp-controller="Photography" asp-action="RandomPhoto">看图</a>
+                <a class="btn btn-primary btn-lg px-4" asp-controller="Blog" asp-action="RandomPost">Read Posts</a>
+                <a class="btn btn-outline-secondary btn-lg px-4" asp-controller="Photography" asp-action="RandomPhoto">View Photos</a>
                 @if (Model.ChartVisible) {
-                    <button class="btn btn-outline-secondary btn-lg px-4" @@click="switchChartType">切换图表</button>
+                    <button class="btn btn-outline-secondary btn-lg px-4" @@click="switchChartType">Switch Chart</button>
                 }
             </div>
         </div>
@@ -50,7 +50,7 @@
         </div>
     }
     else {
-        @await Html.PartialAsync("Widgets/PlaceholderCard", "推荐图片")
+        @await Html.PartialAsync("Widgets/PlaceholderCard", "Featured Photos")
     }
 
 </div>
@@ -65,7 +65,7 @@
         </div>
     }
     else {
-        @await Html.PartialAsync("Widgets/PlaceholderCard", "推荐分类")
+        @await Html.PartialAsync("Widgets/PlaceholderCard", "Featured Categories")
     }
 
 </div>
@@ -77,7 +77,7 @@
         <partial name="Widgets/TopPostCard" model="Model.TopPost"/>
     }
     else {
-        @await Html.PartialAsync("Widgets/PlaceholderCard", "置顶博客")
+        @await Html.PartialAsync("Widgets/PlaceholderCard", "Top Post")
     }
 
 
@@ -89,14 +89,14 @@
         </div>
     }
     else {
-        @await Html.PartialAsync("Widgets/PlaceholderCard", "推荐博客")
+        @await Html.PartialAsync("Widgets/PlaceholderCard", "Featured Posts")
     }
 </div>
 
 <div class="container px-4 py-3">
     <div class="d-flex justify-content-between mb-2 border-bottom">
-        <h2>友情链接</h2>
-        <a class="btn btn-link" asp-controller="LinkExchange" asp-action="Add">申请友链</a>
+        <h2>Friend Links</h2>
+        <a class="btn btn-link" asp-controller="LinkExchange" asp-action="Add">Apply for Link Exchange</a>
     </div>
     @if (Model.Links.Any()) {
         <div class="d-grid gap-2 d-md-block">
@@ -107,7 +107,7 @@
         </div>
     }
     else {
-        @await Html.PartialAsync("Widgets/PlaceholderCard", "友情链接")
+        @await Html.PartialAsync("Widgets/PlaceholderCard", "Friend Links")
     }
 </div>
 
